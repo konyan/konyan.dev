@@ -6,6 +6,8 @@ import Experience from '../components/Experience';
 import Projects from '../components/Projects';
 import GithubStats from '../components/GithubStats';
 import Blog from '../components/Blog';
+import SEO from '../components/SEO';
+import StructuredData from '../components/StructuredData';
 
 const Home: React.FC = () => {
   const location = useLocation();
@@ -29,12 +31,20 @@ const Home: React.FC = () => {
         }
       }, 100); // Small delay to ensure DOM is ready
     } else {
-        window.scrollTo(0,0);
+      window.scrollTo(0, 0);
     }
   }, [location]);
 
   return (
     <>
+      <SEO
+        title="Konyan | Senior Full Stack Engineer"
+        description="Senior Full Stack Engineer specializing in React, React Native, Next.js, and modern web technologies. 7+ years of experience building scalable e-commerce platforms and mobile applications."
+        keywords="Full Stack Engineer, React Developer, React Native, Next.js, TypeScript, Frontend Developer, Mobile App Development, E-commerce Development, Konyan, Software Engineer"
+        canonicalUrl="https://konyan.github.io/konyan.dev/"
+      />
+      <StructuredData type="person" />
+      <StructuredData type="website" />
       <Hero />
       <Skills />
       <Experience />
